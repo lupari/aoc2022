@@ -5,22 +5,18 @@ import scala.io.Source
 object Day03:
 
   case class Item(label: Char):
-    val priority: Int = if label.isUpper then label.toInt - 38 else label.toInt - 96
-
+    val priority: Int = label.toInt - (if label.isUpper then 38 else 96)
   case class Rucksack(compartment1: Set[Item], compartment2: Set[Item]):
-    val error: Item         = (compartment1 & compartment2).head
-    val allItems: Set[Item] = compartment1 ++ compartment2
+    val error: Item      = (compartment1 & compartment2).head
+    val items: Set[Item] = compartment1 ++ compartment2
 
-  def commonItem(rucksacks: List[Rucksack]): Item =
-    val contents = rucksacks.map(_.allItems)
-    contents.tail.foldLeft(contents.head)((a, b) => a & b).head
+  def findBadge(group: List[Rucksack]): Item = group.map(_.items).reduce(_ & _).head
 
-  def parse(line: String): Rucksack = Rucksack(
-    line.take(line.size / 2).toSet.map(Item(_)),
-    line.takeRight(line.size / 2).toSet.map(Item(_))
-  )
+  def parse(line: String): Rucksack =
+    val (c1, c2) = line.splitAt(line.size / 2)
+    Rucksack(c1.toSet.map(Item(_)), c2.toSet.map(Item(_)))
 
   val rucksacks = Source.fromResource("day03.txt").getLines.map(parse).toList
 
   def partOne(): Int = rucksacks.map(_.error.priority).sum
-  def partTwo(): Int = rucksacks.grouped(3).map(commonItem(_).priority).sum
+  def partTwo(): Int = rucksacks.grouped(3).map(findBadge(_).priority).sum
