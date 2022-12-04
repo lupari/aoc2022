@@ -1,4 +1,4 @@
-package challenge
+package assignments
 
 import scala.io.Source
 

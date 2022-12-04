@@ -1,5 +1,5 @@
 import org.scalatest._
-import challenge.Day04
+import assignments.Day04
 
 class Test04 extends flatspec.AnyFlatSpec with matchers.should.Matchers:
 
