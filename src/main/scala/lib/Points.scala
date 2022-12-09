@@ -4,7 +4,7 @@ object Points:
 
   case class Point(x: Int, y: Int):
     def +(p: Point): Point = Point(x + p.x, y + p.y)
-    def -(p: Point): Point = Point(x - p.y, y - p.y)
+    def -(p: Point): Point = Point(x - p.x, y - p.y)
     def *(n: Int): Point   = Point(x * n, y * n)
     def neighbors: List[Point] =
       List(Point(x, y - 1), Point(x + 1, y), Point(x, y + 1), Point(x - 1, y))
@@ -18,6 +18,9 @@ object Points:
       case _          => this
 
     def manhattan(p: Point = Position.zero): Int = (p.x - x).abs + (p.y - y).abs
+    def dist(p1: Point, p2: Point): Int =
+      if (p1.x - p2.x).abs == 1 && (p1.y - p2.y).abs == 1 then 1
+      else (p1.x - p2.x).abs + (p1.y - p2.y).abs
     def directionTo(other: Point): Char = other match
       case Point(x2, y2) if x2 == x && y2 < y => 'N'
       case Point(x2, y2) if x2 == x && y2 > y => 'S'
@@ -35,11 +38,11 @@ object Points:
       (0 to max).map(i => Point(p1.x + dx * i, p1.y + dy * i))
 
   object Position:
-    def zero: Point                  = Point(0, 0)
-    def neighbors: List[Point]       = List(Point(1, 0), Point(-1, 0), Point(0, 1), Point(0, -1))
-    def corners: List[Point]         = List(Point(1, 1), Point(-1, 1), Point(1, -1), Point(-1, -1))
-    def surroundings: List[Point]    = neighbors ++ corners
-    def directions: Map[Char, Point] = List('E', 'W', 'N', 'S').zip(neighbors).toMap
+    val zero: Point                  = Point(0, 0)
+    val neighbors: List[Point]       = List(Point(1, 0), Point(-1, 0), Point(0, 1), Point(0, -1))
+    val corners: List[Point]         = List(Point(1, 1), Point(-1, 1), Point(1, -1), Point(-1, -1))
+    val surroundings: List[Point]    = neighbors ++ corners
+    val directions: Map[Char, Point] = List('E', 'W', 'N', 'S').zip(neighbors).toMap
 
   case class Dir(p: Point, dir: Char) {
     def forward(n: Int = 1): Dir = dir match
@@ -64,7 +67,7 @@ object Points:
   }
 
   case class Box(min: Point, max: Point):
-    def iterator: Iterator[Point] =
+    val iterator: Iterator[Point] =
       for
         x <- (min.x to max.x).iterator
         y <- (min.y to max.y).iterator
