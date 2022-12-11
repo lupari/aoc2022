@@ -1,5 +1,7 @@
 package lib
 
+import scala.annotation.tailrec
+
 object Math:
 
   def mean(seq: Seq[Int]): Double = seq.sum / seq.length.toDouble
@@ -16,3 +18,7 @@ object Math:
     val (a1, an) = if normalized then (0, dist) else (a, b)
     val n        = dist / step + 1
     n * (a1 + an) / 2
+
+  @tailrec
+  def gcd(a: Long, b: Long): Long = if (b == 0) a.abs else gcd(b, a % b)
+  def lcm(a: Long, b: Long): Long = a / gcd(a, b) * b
