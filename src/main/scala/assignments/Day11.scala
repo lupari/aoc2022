@@ -31,13 +31,13 @@ object Day11:
     Monkey(items, op, test)
 
   def step(monkeys: Seq[Monkey]): Seq[Monkey] =
-    monkeys.indices.foldLeft(monkeys)((xs, i) =>
-      val m         = xs(i)
+    monkeys.indices.foldLeft(monkeys)((monkeys, i) =>
+      val m         = monkeys(i)
       val (ok, nok) = m.items.map(m.op).partition(_ % m.test.mod == 0)
-      xs
+      monkeys
         .updated(i, m.discard())
-        .updated(m.test.ok, xs(m.test.ok) :++ ok)
-        .updated(m.test.nok, xs(m.test.nok) :++ nok)
+        .updated(m.test.ok, monkeys(m.test.ok) :++ ok)
+        .updated(m.test.nok, monkeys(m.test.nok) :++ nok)
     )
 
   def monkeyBusiness(monkeys: Seq[Monkey], n: Int)(fn: Op => Op): Long =
