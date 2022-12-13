@@ -9,14 +9,14 @@ object Day12:
 
   val grid: Grid[Char] = Source.fromResource("day12.txt").mkString.toList.toGrid
 
-  def isDescendable(p1: Point, p2: Point): Boolean =
-    def elevation(point: Point): Char = grid(point) match
-      case 'S' => 'a'
-      case 'E' => 'z'
-      case c   => c
-    elevation(p1) - elevation(p2) <= 1
-
   def neighbors(point: Point): List[Point] =
+    def isDescendable(p1: Point, p2: Point) =
+      def elevation(point: Point) = grid(point) match
+        case 'S' => 'a'
+        case 'E' => 'z'
+        case c   => c
+      elevation(p1) - elevation(p2) <= 1
+
     point.neighbors.filter(grid.contains).filter(isDescendable(point, _))
 
   def search(c: Char): Int =

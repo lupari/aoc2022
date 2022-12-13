@@ -5,27 +5,23 @@ import scala.io.Source
 
 object Day13:
 
-  def parseNum(s: String): String = s.takeWhile(_.isDigit)
+  def span(s: String): (String, String) = s.span(_.isDigit)
 
   @tailrec
   def compare(left: String, right: String): Boolean = (left, right) match
     case (l, r) if l.isEmpty || r.isEmpty => l.nonEmpty
     case (l, r) if l.head.isDigit && r.head.isDigit =>
-      val (ln, rn) = (parseNum(l), parseNum(r))
-      if ln == rn then compare(l.drop(ln.size), r.drop(rn.size)) else ln.toInt < rn.toInt
-    case (l, r) if l.head == r.head => compare(left.tail, right.tail)
+      val ((lnum, lrest), (rnum, rrest)) = (span(l), span(r))
+      if lnum == rnum then compare(lrest, rrest) else lnum.toInt < rnum.toInt
+    case (l, r) if l.head == r.head => compare(l.tail, r.tail)
     case _ =>
       (left.head, right.head) match
         case (']', _) => true
         case (_, ']') => false
-        case ('[', _) =>
-          val num = parseNum(right)
-          compare(left, s"[$num]" ++ right.drop(num.size))
-        case (_, '[') =>
-          val num = parseNum(left)
-          compare(s"[$num]" ++ left.drop(num.size), right)
+        case ('[', _) => val (num, rest) = span(right); compare(left, s"[$num]" ++ rest)
+        case (_, '[') => val (num, rest) = span(left); compare(s"[$num]" ++ rest, right)
 
-  val input = Source.fromResource("day13.txt").getLines.filterNot(_.isEmpty).toList
+  val input: List[String] = Source.fromResource("day13.txt").getLines.filterNot(_.isEmpty).toList
 
   def partOne(): Int =
     val comparisons = input.grouped(2).map(i => compare(i.head, i.last))
