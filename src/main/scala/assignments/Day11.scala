@@ -3,12 +3,15 @@ package assignments
 import scala.io.Source
 import lib.Math.lcm
 
+import scala.annotation.targetName
+import scala.language.postfixOps
+
 object Day11:
   type Op = Long => Long
   case class Test(mod: Int, ok: Int, nok: Int)
   case class Monkey(items: Seq[Long], op: Op, test: Test, count: Long = 0):
-    def discard(): Monkey          = copy(items = Seq(), count = count + items.size)
-    def :++(xs: Seq[Long]): Monkey = copy(items = items ++ xs)
+    def discard(): Monkey = copy(items = Seq(), count = count + items.size)
+    @targetName("append") def :++(xs: Seq[Long]): Monkey = copy(items = items ++ xs)
 
   def parseOperation(line: String): Op = line.trim match
     case "Operation: new = old * old" => n => n * n

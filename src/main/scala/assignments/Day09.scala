@@ -2,7 +2,7 @@ package assignments
 
 import scala.annotation.tailrec
 import scala.io.Source
-import lib.Points.{Dir, Point};
+import lib.Points.{Dir, Point}
 
 object Day09:
 
