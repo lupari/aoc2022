@@ -44,7 +44,7 @@ object Points:
     val surroundings: List[Point]    = neighbors ++ corners
     val directions: Map[Char, Point] = List('E', 'W', 'N', 'S').zip(neighbors).toMap
 
-  case class Dir(p: Point, dir: Char) {
+  case class Dir(p: Point, dir: Char):
     def forward(n: Int = 1): Dir = dir match
       case 'U' | 'N' => copy(p = p.copy(y = p.y - n))
       case 'D' | 'S' => copy(p = p.copy(y = p.y + n))
@@ -63,8 +63,6 @@ object Points:
       val deg  = (degrees.abs / 90) % 360
       val i    = dirs.indexOf(dir) + (if (degrees < 0) dirs.length - deg else deg)
       copy(dir = dirs(i % dirs.length))
-
-  }
 
   case class Box(min: Point, max: Point):
     val iterator: Iterator[Point] =

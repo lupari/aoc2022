@@ -1,6 +1,7 @@
 package lib
 
 import scala.annotation.tailrec
+import scala.collection.immutable.Queue
 import scala.collection.mutable
 import scala.collection.mutable.PriorityQueue
 
@@ -76,3 +77,16 @@ object Graphs:
             nf(node).map(n => (n, cf(node, n))).foreach(n => visit(n._1, n._2))
 
       (seen.toMap, None)
+
+  object floodfill:
+    def apply[A](start: A, nf: A => Set[A])(ff: A => Boolean): Set[A] =
+      @tailrec
+      def helper(visited: Set[A], open: Queue[A]): Set[A] =
+        open.dequeueOption match
+          case Some((current, open)) =>
+            val neighbors  = nf(current).filter(ff) -- visited - current
+            val newVisited = visited ++ neighbors
+            val newOpen    = open.enqueueAll(neighbors)
+            helper(newVisited, newOpen)
+          case None => visited
+      helper(Set(start), Queue(start))
