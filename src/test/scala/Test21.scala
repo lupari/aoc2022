@@ -4,6 +4,6 @@ import assignments.Day21
 class Test21 extends flatspec.AnyFlatSpec with matchers.should.Matchers:
 
   it should "calculate correct result" in {
-    //Day21.partOne() should be(75147370123646L)
-    Day21.partTwo() should be(207576)
+    Day21.partOne() should be(75147370123646L)
+    Day21.partTwo() should be(3423279932937L)
   }
