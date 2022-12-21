@@ -9,7 +9,7 @@ object Day20:
 
   def findKey(xs: Seq[Number]): Long =
     val i0 = xs.indexWhere(_.n == 0)
-    Seq(1000, 2000, 3000).map(n => xs((i0 + n) % xs.size).n).sum
+    (1 to 3).map(n => xs((i0 + n * 1000) % xs.size).n).sum
 
   def mix(xs: Seq[Number], n: Int = 1): Long =
     val acc = ArrayBuffer.from(xs)
@@ -25,10 +25,5 @@ object Day20:
 
   val input: List[Long] = Source.fromResource("day20.txt").getLines.map(_.toLong).toList
 
-  def partOne(): Long =
-    val numbers = input.zipWithIndex.map(Number.apply)
-    mix(numbers)
-
-  def partTwo(): Long =
-    val numbers = input.zipWithIndex.map((n, i) => Number(n * 811589153L, i))
-    mix(numbers, n = 10)
+  def partOne(): Long = mix(input.zipWithIndex.map(Number.apply))
+  def partTwo(): Long = mix(input.zipWithIndex.map((n, i) => Number(n * 811589153L, i)), 10)
