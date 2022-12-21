@@ -25,14 +25,11 @@ object Day21:
           case _                  => None
       case _ => None
 
-  def doMonkeyMath(monkeys: Map[String, Monkey]): Map[String, Monkey] =
-    @tailrec
-    def helper(acc: Map[String, Monkey]): Map[String, Monkey] =
-      val scores = acc.values.flatMap(v => findScore(acc, v))
-      if scores.isEmpty then acc
-      else helper(acc ++ scores.map((k, v) => (k -> acc(k).copy(op = None, n = Some(v)))))
-
-    helper(monkeys)
+  @tailrec
+  def doMonkeyMath(acc: Map[String, Monkey]): Map[String, Monkey] =
+    val scores = acc.values.flatMap(v => findScore(acc, v))
+    if scores.isEmpty then acc
+    else helper(acc ++ scores.map((k, v) => (k -> acc(k).copy(op = None, n = Some(v)))))
 
   def binSearch(): Double =
     val (l, r) = (root.op.get.m1, root.op.get.m2)
