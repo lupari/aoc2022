@@ -48,7 +48,7 @@ object Day22:
         val (divX, divY, modX, modY) = (dir.p.x / 50, dir.p.y / 50, dir.p.x % 50, dir.p.y % 50)
         val nextX                    = if next.p.x >= 0 then next.p.x / 50 else next.p.x
         val nextY                    = if next.p.y >= 0 then next.p.y / 50 else next.p.y
-        val otherSide = (divX, divY, nextX, nextY) match
+        val otherSide = (divX, divY, next.p.x / 50, next.p.y / 50) match
           case (1, 0, 0, 0)  => Dir(Point(0, 149 - modY), 'R')     // A -> E
           case (1, 0, 1, -1) => Dir(Point(0, 150 + modX), 'R')     // A -> F
           case (1, 1, 2, 1)  => Dir(Point(100 + modY, 49), 'U')    // C -> B
