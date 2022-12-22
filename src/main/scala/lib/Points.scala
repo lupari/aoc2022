@@ -57,7 +57,8 @@ object Points:
       case 'L' => if (clockwise) Dir(Point(p.x, p.y - n), 'U') else Dir(Point(p.x, p.y + n), 'D')
       case 'R' => if (clockwise) Dir(Point(p.x, p.y + n), 'D') else Dir(Point(p.x, p.y - n), 'U')
 
-    def turn(d: Char): Dir = copy(dir = d)
+    def rotate(d: Char): Dir = rotate(d == 'R')
+    def turn(d: Char): Dir   = copy(dir = d)
     def turn(degrees: Int): Dir =
       val dirs = Seq('U', 'R', 'D', 'L')
       val deg  = (degrees.abs / 90) % 360
