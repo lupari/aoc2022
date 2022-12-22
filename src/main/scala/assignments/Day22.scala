@@ -49,31 +49,21 @@ object Day22:
         val nextX                    = if next.p.x >= 0 then next.p.x / 50 else next.p.x
         val nextY                    = if next.p.y >= 0 then next.p.y / 50 else next.p.y
         val otherSide = (divX, divY, nextX, nextY) match
-          case (1, 0, 2, 0) | (1, 0, 1, 1) => next                           // A -> B, A -> C
-          case (1, 0, 0, 0)                => Dir(Point(0, 149 - modY), 'R') // A -> E
-          case (1, 0, 1, -1)               => Dir(Point(0, 150 + modX), 'R') // A -> F
-
-          case (1, 1, 1, 0) | (1, 1, 1, 2) => next                            // C -> A, C -> D
-          case (1, 1, 2, 1)                => Dir(Point(100 + modY, 49), 'U') // C -> B
-          case (1, 1, 0, 1)                => Dir(Point(modY, 100), 'D')      // C -> E
-
-          case (1, 2, 1, 1) | (1, 2, 0, 2) => next                            // D -> C, D -> E
-          case (1, 2, 2, 2)                => Dir(Point(149, 49 - modY), 'L') // D -> B
-          case (1, 2, 1, 3)                => Dir(Point(49, 150 + modX), 'L') // D -> F
-
-          case (0, 2, 1, 2) | (0, 2, 0, 3) => next                           // E -> D, E -> F
-          case (0, 2, -1, 2)               => Dir(Point(50, 49 - modY), 'R') // E -> A
-          case (0, 2, 0, 1)                => Dir(Point(50, 50 + modX), 'R') // E -> C
-
-          case (2, 0, 1, 0)  => next                               // B -> A
+          case (1, 0, 0, 0)  => Dir(Point(0, 149 - modY), 'R')     // A -> E
+          case (1, 0, 1, -1) => Dir(Point(0, 150 + modX), 'R')     // A -> F
+          case (1, 1, 2, 1)  => Dir(Point(100 + modY, 49), 'U')    // C -> B
+          case (1, 1, 0, 1)  => Dir(Point(modY, 100), 'D')         // C -> E
+          case (1, 2, 2, 2)  => Dir(Point(149, 49 - modY), 'L')    // D -> B
+          case (1, 2, 1, 3)  => Dir(Point(49, 150 + modX), 'L')    // D -> F
+          case (0, 2, -1, 2) => Dir(Point(50, 49 - modY), 'R')     // E -> A
+          case (0, 2, 0, 1)  => Dir(Point(50, 50 + modX), 'R')     // E -> C
           case (2, 0, 2, 1)  => Dir(Point(99, 50 + modX), 'L')     // B -> C
           case (2, 0, 3, 0)  => Dir(Point(99, 149 - modY), 'L')    // B -> D
           case (2, 0, 2, -1) => dir.copy(p = Point(0 + modX, 199)) // B -> F
-
           case (0, 3, -1, 3) => Dir(Point(50 + modY, 0), 'D')      // F -> A
           case (0, 3, 0, 4)  => dir.copy(p = Point(100 + modX, 0)) // F -> B
           case (0, 3, 1, 3)  => Dir(Point(50 + modY, 149), 'U')    // F -> D
-          case (0, 3, 0, 2) => next // F -> E
+          case _             => next
 
         if grid(otherSide.p) == '.' then otherSide else dir
 
