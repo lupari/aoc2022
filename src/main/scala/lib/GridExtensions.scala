@@ -16,6 +16,12 @@ object GridExtensions:
       for p <- grid yield canvas(p._1.y)(p._1.x) = cf(p._2)
       canvas
 
+    def printGrid(default: A, cf: A => A = identity)(using classTag: ClassTag[A]): Unit =
+      val canvas = grid.canvas(default)(cf)
+      canvas.foreach { row =>
+        row.mkString foreach print; println
+      }
+
   private def makeGrid[A](input: Seq[Char])(fn: (Char => A)): Grid[A] =
     @tailrec
     def helper(xs: Seq[Char], acc: Grid[A], current: Point): Grid[A] =
