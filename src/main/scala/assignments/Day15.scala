@@ -13,7 +13,7 @@ object Day15:
       else Seq(this, other)
 
   case class Data(sensor: Point, beacon: Point):
-    val distance = sensor.manhattan(beacon)
+    val distance: Int = sensor.manhattan(beacon)
     def intervalAt(y: Int): Option[Interval] =
       val dy = (y - sensor.y).abs
       val dx = distance - dy
@@ -38,7 +38,7 @@ object Day15:
         case _ => None
     )
 
-  val regex = """.*x=(-?\d+), y=(-?\d+).*x=(-?\d+), y=(-?\d+)""".r
+  private val regex = """.*x=(-?\d+), y=(-?\d+).*x=(-?\d+), y=(-?\d+)""".r
   def parse(line: String): Data = line match
     case regex(x1, y1, x2, y2) => Data(Point(x1.toInt, y1.toInt), Point(x2.toInt, y2.toInt))
 

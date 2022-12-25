@@ -19,12 +19,12 @@ object Day23:
 
   case class State(grove: Grid[Char], dirs: List[Char], finished: Boolean)
   def step(state: State): State =
-    val elves       = state.grove.filter((e, c) => c == '#').keys.toList
+    val elves       = state.grove.filter((_, c) => c == '#').keys.toList
     val proposals   = elves.flatMap(e => propose(state.grove, e, state.dirs))
     val occurrences = proposals.map(_._2).groupMapReduce(identity)(_ => 1)(_ + _)
     val doable      = proposals.filter(p => occurrences(p._2) == 1)
-    val map2        = state.grove ++ doable.map(_._1 -> '.') ++ doable.map(_._2 -> '#')
-    State(map2, state.dirs.tail :+ state.dirs.head, doable.isEmpty)
+    val grove2      = state.grove ++ doable.map(_._1 -> '.') ++ doable.map(_._2 -> '#')
+    State(grove2, state.dirs.tail :+ state.dirs.head, doable.isEmpty)
 
   def move: Iterator[State] = Iterator.iterate(State(grove, "NSWE".toList, false))(step)
 
@@ -38,7 +38,8 @@ object Day23:
     )
     (for x <- minX to maxX; y <- minY to maxY yield Point(x, y)).count(grove(_) == '.')
 
-  val grove = Source.fromResource("day23.txt").mkString.toList.toGrid.withDefaultValue('.')
+  val grove: Grid[Char] =
+    Source.fromResource("day23.txt").mkString.toList.toGrid.withDefaultValue('.')
 
   def partOne(): Int = vacancy(move.drop(10).next.grove)
   def partTwo(): Int = move.indexWhere(_.finished)

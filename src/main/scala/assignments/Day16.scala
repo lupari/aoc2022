@@ -1,6 +1,7 @@
 package assignments
 
 import scala.io.Source
+import scala.language.postfixOps
 import lib.Graphs.bfs
 
 object Day16:
@@ -11,17 +12,17 @@ object Day16:
     bfs.search(v1)(v => v.tunnels.map(valves(_)))(_ == v2).get + 1
 
   def build(v: Valve): (String, Map[String, Int]) =
-    val m = valves.values.map(vv => (vv -> duration(v, vv))).toMap
+    val m = valves.values.map(vv => vv -> duration(v, vv)).toMap
     (v.label, m.map(kv => kv._1.label -> kv._2))
 
   private val regex = """Valve (\w+) has flow rate=(\d+); tunnels? leads? to valves? ([\w, ]+)""".r
   def parse(line: String): (String, Valve) = line match
     case regex(l, r, ts) => (l, Valve(l, r.toInt, ts.split(", ").toList))
 
-  val input                      = Source.fromResource("day16.txt").getLines.toList
-  val valves: Map[String, Valve] = input.map(parse).toMap
-  val durations                  = valves.values.map(build).toMap
-  val openValves                 = valves.filter(_._2.rate > 0).keySet
+  val input: Seq[String]                       = Source.fromResource("day16.txt").getLines.toList
+  val valves: Map[String, Valve]               = input.map(parse).toMap
+  val durations: Map[String, Map[String, Int]] = valves.values.map(build).toMap
+  val openValves: Set[String]                  = valves.filter(_._2.rate > 0).keySet
 
   def partOne(): Int =
     def find(valve: String, unseen: Set[String], time: Int, pressure: Int): Int = unseen

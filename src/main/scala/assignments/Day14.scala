@@ -7,7 +7,7 @@ import lib.Points._
 object Day14:
 
   type Cave = Set[Point]
-  val movements = Seq(Point(0, 1), Point(-1, 1), Point(1, 1))
+  val movements: Seq[Point] = Seq(Point(0, 1), Point(-1, 1), Point(1, 1))
 
   @tailrec
   def drop(sand: Point)(implicit cave: Cave, bottom: Int): Point =

@@ -5,7 +5,7 @@ import lib.Points.Point
 
 object Day17:
 
-  val rocks = Seq(
+  val rocks: Seq[Set[Point]] = Seq(
     Set(Point(0, 0), Point(1, 0), Point(2, 0), Point(3, 0)),
     Set(Point(1, 0), Point(0, 1), Point(1, 1), Point(2, 1), Point(1, 2)),
     Set(Point(0, 0), Point(1, 0), Point(2, 0), Point(2, 1), Point(2, 2)),
@@ -43,7 +43,7 @@ object Day17:
     val (q, r)  = (offset / w, offset % w)
     (q * h) + heights(start + r.toInt)
 
-  val input = Source.fromResource("day17.txt").mkString
+  val input: String = Source.fromResource("day17.txt").mkString
 
   def partOne(): Int  = tetris(input).drop(2022).next
   def partTwo(): Long = findHeight(input, 1000000000000L)

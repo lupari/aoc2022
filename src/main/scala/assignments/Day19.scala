@@ -1,16 +1,17 @@
 package assignments
 
+import scala.annotation.targetName
 import scala.io.Source
 
 object Day19:
 
   case class Costs(id: Int, ore1: Int, ore2: Int, ore3: Int, ore4: Int, clay: Int, obsidian: Int)
   case class Blueprint(ore: Int, clay: Int, obsidian: Int, geode: Int):
-    def +(b: Blueprint): Blueprint =
+    @targetName("plus") def +(b: Blueprint): Blueprint =
       Blueprint(ore + b.ore, clay + b.clay, obsidian + b.obsidian, geode + b.geode)
-    def -(b: Blueprint): Blueprint =
+    @targetName("minus") def -(b: Blueprint): Blueprint =
       Blueprint(ore - b.ore, clay - b.clay, obsidian - b.obsidian, geode - b.geode)
-    def <=(b: Blueprint): Boolean =
+    @targetName("le") def <=(b: Blueprint): Boolean =
       ore <= b.ore && clay <= b.clay && obsidian <= b.obsidian && geode <= b.geode
   case class State(
       t: Int,
@@ -35,7 +36,6 @@ object Day19:
     val obsidianBot  = Blueprint(0, 0, 1, 0)
     val geodeBot     = Blueprint(0, 0, 0, 1)
     val maxOre       = List(costs.ore1, costs.ore2, costs.ore3, costs.ore4).max
-    val zero         = Blueprint(0, 0, 0, 0)
 
     def helper(state: State): Int = state match
       case State(t, bots, acc, ore, clay, obsidian) =>
@@ -57,7 +57,7 @@ object Day19:
 
     costs.id * helper(State(t, oreBot, Blueprint(0, 0, 0, 0)))
 
-  val costs = Source.fromResource("day19.txt").getLines().toList.map(parse)
+  val costs: List[Costs] = Source.fromResource("day19.txt").getLines().toList.map(parse)
 
   def partOne(): Int = costs.map(maximize(_, 24)).sum
   def partTwo(): Int = costs.take(3).map(maximize(_, 32)).product / 6

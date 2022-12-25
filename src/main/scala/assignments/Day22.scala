@@ -22,8 +22,8 @@ object Day22:
 
     helper(dirs.toList, List.empty)
 
-  def step(dir: Dir)(leap: (Dir) => Dir): Dir =
-    val next = dir.forward(1)
+  def step(dir: Dir)(leap: Dir => Dir): Dir =
+    val next = dir.forward()
     grid(next.p) match
       case '.' => next
       case '#' => dir
@@ -54,7 +54,7 @@ object Day22:
     //  C
     // ED
     // F
-    val next                     = dir.forward(1)
+    val next                     = dir.forward()
     val (divX, divY, modX, modY) = (dir.p.x / 50, dir.p.y / 50, dir.p.x % 50, dir.p.y % 50)
     val nextX                    = if next.p.x >= 0 then next.p.x / 50 else next.p.x
     val nextY                    = if next.p.y >= 0 then next.p.y / 50 else next.p.y
@@ -75,10 +75,10 @@ object Day22:
       case (0, 3, 1, 3)  => Dir(Point(50 + modY, 149), 'U')    // F -> D
       case _             => next
 
-  val input       = Source.fromResource("day22.txt").getLines.toList
-  val (map, dirs) = (input.dropRight(2), input.last)
-  val grid        = map.mkString("\n").toList.toGrid.withDefaultValue(' ')
-  val moves       = parse(dirs)
+  val input: List[String]    = Source.fromResource("day22.txt").getLines.toList
+  val (map, dirs)            = (input.dropRight(2), input.last)
+  val grid: Map[Point, Char] = map.mkString("\n").toList.toGrid.withDefaultValue(' ')
+  val moves: List[Move]      = parse(dirs)
 
   def partOne(): Int = move(moves)(leap1)
   def partTwo(): Int = move(moves)(leap2)

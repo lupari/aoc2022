@@ -26,7 +26,7 @@ object Day21:
   def doMonkeyMath(acc: Map[String, Monkey]): Map[String, Monkey] =
     val resolved = acc.values.flatMap(resolve(_)(acc))
     if resolved.isEmpty then acc
-    else doMonkeyMath(acc ++ resolved.map((k, v) => (k -> acc(k).resolve(v))))
+    else doMonkeyMath(acc ++ resolved.map((k, v) => k -> acc(k).resolve(v)))
 
   def binSearch(monkeys: Map[String, Monkey]): Double =
     val (l, r) = (root.op.get.m1, root.op.get.m2)
@@ -46,7 +46,8 @@ object Day21:
     case s"$name: $p1 $op $p2" => Monkey(name, None, Some(Operation(p1, p2, op.head)))
     case s"$name: $n"          => Monkey(name, Some(n.toDouble), None)
 
-  val monkeys = Source.fromResource("day21.txt").getLines().map(parse).map(m => (m.name -> m)).toMap
+  val monkeys: Map[String, Monkey] =
+    Source.fromResource("day21.txt").getLines().map(parse).map(m => m.name -> m).toMap
   val (root, human) = (monkeys("root"), monkeys("humn"))
 
   def partOne(): Double = doMonkeyMath(monkeys)(root.name).n.get
