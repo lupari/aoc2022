@@ -3,9 +3,10 @@ package lib
 object Points:
 
   case class Point(x: Int, y: Int):
-    def +(p: Point): Point = Point(x + p.x, y + p.y)
-    def -(p: Point): Point = Point(x - p.x, y - p.y)
-    def *(n: Int): Point   = Point(x * n, y * n)
+    def +(p: Point): Point    = Point(x + p.x, y + p.y)
+    def -(p: Point): Point    = Point(x - p.x, y - p.y)
+    def *(n: Int): Point      = Point(x * n, y * n)
+    def <=(p: Point): Boolean = x <= p.x && y <= p.y
     def neighbors: List[Point] =
       List(Point(x, y - 1), Point(x + 1, y), Point(x, y + 1), Point(x - 1, y))
     def corners: List[Point] =
