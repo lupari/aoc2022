@@ -1,0 +1,91 @@
+2024.12.03 12:24:35 INFO  Started: Metals version 1.4.1 in folders '/Users/mlupari/aoc2022' for client Visual Studio Code 1.95.3.
+2024.12.03 12:24:36 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.12.03 12:24:36 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+Dec 03, 2024 12:24:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2024.12.03 12:24:40 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:24:40 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:24:40 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:24:41 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:24:55 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:33 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:33 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:33 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:33 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:33 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:34 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:34 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:34 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:34 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:35 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:35 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:25:36 WARN  no build target for: /Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:25:35 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:36 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:36 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:25:36 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:25:36 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:03 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:11 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:11 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:11 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:11 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:12 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:12 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:12 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:12 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:12 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:12 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:12 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:12 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:13 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:13 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:13 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:13 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:13 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:13 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:13 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:13 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:13 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:14 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:14 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:14 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:14 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:15 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:15 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:15 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:16 WARN  no build target for: /Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:16 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:16 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:16 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:16 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:16 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:25 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:25 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:25 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:25 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:25 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:25 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:27 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:27 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:27 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:27 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:27 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:27 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:27 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:28 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:28 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:28 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:28 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:28 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:28 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:29 WARN  no build target for: /Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:29 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:29 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:29 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:29 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 12:26:29 WARN  Could not find semantic tokens for: file:///Users/mlupari/aoc2022/build.sbt
+2024.12.03 12:26:30 INFO  no build target found for /Users/mlupari/aoc2022/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.03 13:14:35 INFO  Shutting down server
+2024.12.03 13:14:35 INFO  shutting down Metals
+2024.12.03 13:14:35 INFO  Exiting server
