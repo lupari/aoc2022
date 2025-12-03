@@ -45,7 +45,7 @@ object Graphs:
         hf: A => Int
     ): (Map[A, Int], Option[(A, Int)]) =
       val seen: mutable.Map[A, Int]            = mutable.Map.empty
-      val unseen: PriorityQueue[(Int, Int, A)] = PriorityQueue.empty(Ordering.by(-_._1))
+      val unseen: PriorityQueue[(Int, Int, A)] = PriorityQueue.empty(using Ordering.by(-_._1))
       unseen.enqueue((hf(start), 0, start))
       while unseen.nonEmpty do
         val (_, dist, node) = unseen.dequeue()
@@ -64,7 +64,7 @@ object Graphs:
         cf: (A, A) => Int
     ): (Map[A, Int], Option[(A, Int)]) =
       val seen: mutable.Map[A, Int]       = mutable.Map.empty
-      val unseen: PriorityQueue[(Int, A)] = PriorityQueue.empty(Ordering.by(-_._1))
+      val unseen: PriorityQueue[(Int, A)] = PriorityQueue.empty(using Ordering.by(-_._1))
       unseen.enqueue((0, start))
       while unseen.nonEmpty do
         val (dist, node) = unseen.dequeue()

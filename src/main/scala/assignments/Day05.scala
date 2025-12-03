@@ -29,9 +29,9 @@ object Day05:
   val stacks: Stacks = input
     .takeWhile(_.exists(_.isLetter))
     .map(_.zipWithIndex.filter(_._1.isLetter).map(_.swap).toMap)
-    .foldLeft(Map.empty[Int, Seq[Char]])(_ addOrUpdate _)
+    .foldLeft(Map.empty[Int, Seq[Char]])(_ `addOrUpdate` _)
     .map(kv => kv._1 / 4 + 1 -> kv._2.reverse)
   val moves: Seq[Move] = input.dropWhile(_.nonEmpty).tail.map(parse)
 
-  def partOne(): String = topText(move(stacks, moves)(_.reverse))
+  def partOne(): String = topText(move(stacks, moves)(using _.reverse))
   def partTwo(): String = topText(move(stacks, moves))

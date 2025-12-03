@@ -31,9 +31,9 @@ object Day24:
 
   lazy val (width, height) = (input.head.length - 2, input.length - 2)
   val (entrance, exit)     = (Point(1, 0), Point(width, height + 1))
-  val path1: Int           = search(Set(entrance))(exit, input)
+  val path1: Int           = search(Set(entrance))(using exit, input)
 
   def partOne(): Int = path1
   def partTwo(): Int =
-    val path2 = search(Set(exit), path1)(entrance, input)
-    search(Set(entrance), path2)(exit, input)
+    val path2 = search(Set(exit), path1)(using entrance, input)
+    search(Set(entrance), path2)(using exit, input)

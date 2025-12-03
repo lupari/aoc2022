@@ -20,6 +20,7 @@ object Day13:
         case (_, ']') => false
         case ('[', _) => val (num, rest) = span(right); compare(left, s"[$num]" ++ rest)
         case (_, '[') => val (num, rest) = span(left); compare(s"[$num]" ++ rest, right)
+        case _ => false
 
   val input: List[String] = Source.fromResource("day13.txt").getLines.filterNot(_.isEmpty).toList
 

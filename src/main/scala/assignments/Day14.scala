@@ -18,7 +18,7 @@ object Day14:
 
   @tailrec
   def fill(cave: Cave)(implicit bottom: Int, isSettled: Point => Boolean): Int =
-    val sand = drop(source)(cave, bottom)
+    val sand = drop(source)(using cave, bottom)
     if isSettled(sand) then (cave -- rock).size else fill(cave + sand)
 
   def parse(pair: Seq[String]): Seq[Point] =
@@ -33,5 +33,5 @@ object Day14:
   val floor: Int    = rock.maxBy(_.y).y
   val source: Point = Point(500, 0)
 
-  def partOne(): Int = fill(rock)(floor, _.y == floor)
-  def partTwo(): Int = fill(rock)(floor + 1, _ == source) + 1
+  def partOne(): Int = fill(rock)(using floor, _.y == floor)
+  def partTwo(): Int = fill(rock)(using floor + 1, _ == source) + 1
